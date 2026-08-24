@@ -5,6 +5,12 @@ layout: default
 ---
 <div class="post profile-centered">
   <article>
+    <h1 class="post-title profile-name">
+      {{ site.first_name }}
+      {%- if site.middle_name %} {{ site.middle_name }}{% endif %}
+      {{ site.last_name }}
+    </h1>
+
     {% if page.profile and page.profile.image %}
       {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
       {% if page.profile.image_circular %}
@@ -19,12 +25,6 @@ layout: default
         %}
       </div>
     {% endif %}
-
-    <h1 class="post-title profile-name">
-      {{ site.first_name }}
-      {%- if site.middle_name %} {{ site.middle_name }}{% endif %}
-      {{ site.last_name }}
-    </h1>
 
     {% if page.social %}
       <div class="social">
