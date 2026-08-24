@@ -1,0 +1,16 @@
+# Social links shown at the bottom of the about page.
+# Each value is just the username / ID — the plugin builds the full URL.
+# Replace the placeholders below with your real handles, then save (the site auto-reloads).
+
+# Email: shown as an envelope icon linking to mailto:
+email: rco3@gatech.edu
+
+# LinkedIn: the part after linkedin.com/in/  ->  linkedin.com/in/<this>
+linkedin_username: ryanpco
+
+# X / Twitter: your handle without the @  ->  twitter.com/<this>
+x_username: ryanp_co
+
+# Google Scholar: the "user=" value in your profile URL
+# e.g. scholar.google.com/citations?user=XXXXXXXX  ->  scholar_userid: XXXXXXXX
+scholar_userid: eTFrNMUAAAAJ
