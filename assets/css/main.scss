@@ -39,6 +39,13 @@
    Custom overrides — centered minimal about page
    --------------------------------------------------------------------------- */
 
+/* Top-right "about" nav link: force black (it's the active page, which the
+   theme would otherwise render in the accent color). */
+.navbar.navbar-light .navbar-nav .nav-item .nav-link,
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  color: #000 !important;
+}
+
 .profile-centered {
   article {
     display: flex;
@@ -47,21 +54,21 @@
     text-align: center;
   }
 
+  /* Name above the photo, in a single un-bold weight (no bolded first name) */
+  .profile-name {
+    font-weight: 500;
+    margin: 0 0 1.5rem;
+  }
+
   .profile-photo {
     width: 60%;
     max-width: 220px;
-    margin: 1.5rem auto 1.75rem;
+    margin: 0 auto 1.75rem;
 
     img {
       width: 100%;
       height: auto;
     }
-  }
-
-  /* Name in a single, un-bold weight (no bolded first name) */
-  .profile-name {
-    font-weight: 500;
-    margin: 0 0 1.25rem;
   }
 
   .social {
