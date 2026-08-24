@@ -1,0 +1,78 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+# NOTE: This file overrides the al_folio_core theme's assets/css/main.scss.
+# It is a verbatim copy of the theme's @use block plus the custom rules at the bottom.
+# If you upgrade the al-folio theme gem, re-check this against the theme's main.scss.
+---
+@charset "utf-8";
+
+/* Built-in Sass modules you’ll likely use across partials */
+@use "sass:math";
+@use "sass:string";
+
+/* Configure your design tokens BEFORE loading any of your partials.
+   Make sure `_sass/_variables.scss` declares `$max-content-width: 72rem !default;` */
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+/* Your project partials — convert these files to `@use "variables";`
+   (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/* ---------------------------------------------------------------------------
+   Custom overrides — centered minimal about page
+   --------------------------------------------------------------------------- */
+
+.profile-centered {
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 60%;
+    max-width: 220px;
+    margin: 1.5rem auto 1.75rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /* Name in a single, un-bold weight (no bolded first name) */
+  .profile-name {
+    font-weight: 500;
+    margin: 0 0 1.25rem;
+  }
+
+  .social {
+    margin-top: 0.25rem;
+
+    .contact-icons {
+      font-size: 1.5rem;
+
+      a {
+        margin: 0 0.4rem;
+      }
+    }
+  }
+}
