@@ -1,0 +1,35 @@
+---
+layout: default
+# Overrides al_folio_core's _layouts/about.liquid with a minimal, centered profile:
+# centered photo + name + social icons. No subtitle, bio, news, posts, papers, or contact note.
+---
+<div class="post profile-centered">
+  <article>
+    {% if page.profile and page.profile.image %}
+      {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+      {% if page.profile.image_circular %}
+        {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+      {% else %}
+        {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+      {% endif %}
+      <div class="profile-photo">
+        {%
+          include figure.liquid loading="eager" path=profile_image_path
+          class=profile_image_class alt=page.profile.image cache_bust=true
+        %}
+      </div>
+    {% endif %}
+
+    <h1 class="post-title profile-name">
+      {{ site.first_name }}
+      {%- if site.middle_name %} {{ site.middle_name }}{% endif %}
+      {{ site.last_name }}
+    </h1>
+
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+      </div>
+    {% endif %}
+  </article>
+</div>
