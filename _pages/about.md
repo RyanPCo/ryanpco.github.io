@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: redirect
 title: about
 permalink: /
 subtitle: # optional tagline shown under your name — e.g. "Researcher at X. Interested in Y."
